@@ -21,10 +21,6 @@ source ~/git-completion.bash
 # jfon: Latex style checker from https://github.com/vvcogo/style-check-html
 export PATH="/Users/jfon/src/style-check-html:$PATH"
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/jfon/.sdkman"
-[[ -s "/Users/jfon/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/jfon/.sdkman/bin/sdkman-init.sh"
-
 # distributary: Rust env path variable.
 source $HOME/.cargo/env
 
@@ -51,3 +47,7 @@ export PROMETHEUS_HOME="/usr/local/prometheus-1.6.1.darwin-amd64"
 
 # jfon: Apache Kafka's install dir.
 export KAFKA_HOME="/usr/local/confluent-3.2.1"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/jfon/.sdkman"
+[[ -s "/Users/jfon/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/jfon/.sdkman/bin/sdkman-init.sh"

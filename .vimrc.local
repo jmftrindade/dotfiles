@@ -1,4 +1,12 @@
+" jfon: a few more settings not shipped with maximum-awesome
+set textwidth=80  " line break after 80 chars
 set nocursorline " don't highlight current line
+
+"set autowrite
+"set nowritebackup
+"set whichwrap+=<,>,h,l,[,] " Wrap arrow keys between lines
+autocmd! bufwritepost .vimrc source ~/.vimrc
+" noremap! jj <ESC>
 
 " keyboard shortcuts
 inoremap jj <ESC>
@@ -32,11 +40,27 @@ endfunction
 command! -nargs=0 RemoveConflictingAlignMaps call s:RemoveConflictingAlignMaps()
 silent! autocmd VimEnter * RemoveConflictingAlignMaps
 
+" jfon: Configure google-vimcodefmt:
+augroup autoformat_settings
+  autocmd FileType bzl AutoFormatBuffer buildifier
+  autocmd FileType c,cpp,proto,javascript AutoFormatBuffer clang-format
+  autocmd FileType dart AutoFormatBuffer dartfmt
+  autocmd FileType go AutoFormatBuffer gofmt
+  autocmd FileType gn AutoFormatBuffer gn
+  autocmd FileType html,css,json AutoFormatBuffer js-beautify
+  autocmd FileType java AutoFormatBuffer google-java-format
+  autocmd FileType python AutoFormatBuffer yapf
+  " Alternative: autocmd FileType python AutoFormatBuffer autopep8
+  autocmd FileType python set shiftwidth=2
+  autocmd FileType python set tabstop=2
+  autocmd FileType python set softtabstop=2
+augroup END
+
 " jfon: Run google-vimcodefmt code formatter and fisadev/vim-isort on all lines of the file buffer.
-:augroup codeformatter
-:    autocmd BufWritePost * FormatCode
+":augroup codeformatter
+":    autocmd BufWritePost * FormatCode
 ":    autocmd BufWritePost * Isort
-:augroup END
+":augroup END
 
 " jfon: Ctrl+i to sort Python imports (from fisadev/vim-isort Vundle plugin).
 "let g:vim_isort_map = '<C-i>'

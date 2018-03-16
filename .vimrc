@@ -18,6 +18,9 @@ endif
 
 call vundle#end()
 
+" jfon: Install glaive
+call glaive#Install()
+
 " ensure ftdetect et al work by including this after the Vundle stuff
 filetype plugin indent on
 

@@ -19,6 +19,9 @@ alias gc='git commit -am'  # add commit msg
 alias gp='git push'
 alias grm='git rm $(git ls-files --deleted)'
 
+# tmux
+alias t='tmux'
+
 # sudo for alias'ed cmds
 alias sudo='sudo '
 
@@ -26,5 +29,6 @@ alias sudo='sudo '
 alias vim='mvim -v'
 
 # Colored up cat!
-# You must install Pygments first - "sudo easy_install Pygments"
-alias c='pygmentize -O style=monokai -f console256 -g'
+# You must install Pygments first - "sudo easy_install Pygments", and then
+# install solarized CSS: "pip install pygments-style-solarized"
+alias c='pygmentize -O style=solarizedlight -f console256 -g'

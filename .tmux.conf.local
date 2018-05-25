@@ -1,1 +1,15 @@
-# Add your local tmux config here
+# Tmux Plugin Manager list of plugins (tpm at https://github.com/tmux-plugins/tpm):
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-continuum'  # auto-restore and save sessions on restart
+set -g @plugin 'tmux-plugins/tmux-copycat'
+set -g @plugin 'tmux-plugins/tmux-open'
+set -g @plugin 'tmux-plugins/tmux-prefix-highlight'
+set -g @plugin 'tmux-plugins/tmux-sidebar'  # prefix + Backspace
+
+# TPM plugin settings
+set -g @continuum-boot 'on'  # enable automatic tmux start
+set -g @continuum-restore 'on'  # auto-restore last saved session
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+run '~/.tmux/plugins/tpm/tpm'

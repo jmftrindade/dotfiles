@@ -1,5 +1,9 @@
+#[filter "lfs"]
+#  clean = git-lfs clean %f
+#  smudge = git-lfs smudge %f
+#  required = true
 [user]
-  name = Joana M. F. da Trindade
+  name = Joana Trindade
   email = jmftrindade@gmail.com
 
 # colors for colored commands
@@ -35,7 +39,7 @@
   trustExitCode = true
   cmd = open -W -a Meld --args --auto-merge \"$PWD/$LOCAL\" \"$PWD/$BASE\" \"$PWD/$REMOTE\" --output=\"$PWD/$MERGED\"
 
-# cr/lf on projects where collabs are using a mix of win + *nix systems
+# cr/lf on projects where collaborators are using a mix of win + *nix systems
 [core]
   autocrlf = false
   safecrlf = true

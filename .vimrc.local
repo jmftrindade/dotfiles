@@ -6,7 +6,6 @@ set nocursorline " don't highlight current line
 "set nowritebackup
 "set whichwrap+=<,>,h,l,[,] " Wrap arrow keys between lines
 autocmd! bufwritepost .vimrc source ~/.vimrc
-" noremap! jj <ESC>
 
 " keyboard shortcuts
 inoremap jj <ESC>
@@ -15,8 +14,18 @@ inoremap jj <ESC>
 "set hlsearch
 "nmap <leader>hl :let @/ = ""<CR>
 
+" powerline-status
+set guifont=Inconsolata\ for\ Powerline:h15
+let g:Powerline_symbols = 'fancy'
+set encoding=utf-8
+set t_Co=256
+set fillchars+=stl:\ ,stlnc:\
+set term=xterm-256color
+set termencoding=utf-8
+
 " gui settings
 if (&t_Co == 256 || has('gui_running'))
+  " color scheme
   if ($TERM_PROGRAM == 'iTerm.app')
     colorscheme solarized
   else

@@ -29,6 +29,7 @@ alias sudo='sudo '
 alias vim='mvim -v'
 
 # Colored up cat!
-# You must install Pygments first - "sudo easy_install Pygments", and then
+# You must install Pygments first - "sudo easy_install Pygments"
 # install solarized CSS: "pip install pygments-style-solarized"
-alias c='pygmentize -O style=solarizedlight -f console256 -g'
+alias c='pygmentize -O style=solarizeddark -f console256 -g'
+#alias c='pygmentize -O style=monokai -f console256 -g'

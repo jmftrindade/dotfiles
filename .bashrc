@@ -22,7 +22,7 @@ gpip3(){
 
 # TODO: jfon: auto complete git commands
 # from https://git-scm.com/book/en/v1/Git-Basics-Tips-and-Tricks
-#source ~/git-completion.bash
+source ~/git-completion.bash
 
 # TODO: jfon: Latex style checker from https://github.com/vvcogo/style-check-html
 #export PATH="/Users/jfon/src/style-check-html:$PATH"
@@ -49,6 +49,8 @@ alias stop-flink='/usr/local/Cellar/apache-flink/1.3.2/libexec/bin/stop-local.sh
 # TODO: jfon: Apache Kafka's install dir.
 # export KAFKA_HOME="/usr/local/confluent-3.2.1"
 
+# jfon: brew install clang --with-toolchain:
+export PATH="/usr/local/opt/llvm/bin:$PATH"
 
 
 ## Prompt colors, from:
@@ -104,7 +106,8 @@ function parse_git_branch() {
 
 # Change this symbol to something sweet.
 # (http://en.wikipedia.org/wiki/Unicode_symbols)
-symbol="⚡ "
+#symbol="⚡ "
+symbol="$ "
 
 export PS1="\[${MAGENTA}\]\u \[$RESET\]in \[$GREEN\]\w\[$RESET\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)\[$RESET\]\n$symbol\[$RESET\]"
 export PS2="\[$ORANGE\]→ \[$RESET\]"
@@ -114,4 +117,3 @@ export PS2="\[$ORANGE\]→ \[$RESET\]"
 
 # Only show the current directory's name in the tab
 export PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007"'
-

@@ -17,6 +17,7 @@ alias gs='git status --porcelain'
 alias ga='git add .'
 alias gc='git commit -am'  # add commit msg
 alias gp='git push'
+alias gr='git remote -v'
 alias grm='git rm $(git ls-files --deleted)'
 
 # tmux

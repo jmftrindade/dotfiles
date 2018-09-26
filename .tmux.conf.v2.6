@@ -150,8 +150,12 @@ set -g visual-activity on
 # Powerline status bar (update path appropriately)
 # Depends on powerline install (pip install powerline-status)
 run-shell "powerline-daemon -q"
-source "/usr/local/lib/python2.7/site-packages/powerline/bindings/tmux/powerline.conf"
+# Mac OS X with conda python:
 #source "/anaconda/lib/python3.5/site-packages/powerline/bindings/tmux/powerline.conf"
+# Mac OS X with proper python:
+source "/usr/local/lib/python2.7/site-packages/powerline/bindings/tmux/powerline.conf"
+# Ubuntu boxes (pip --user install):
+#source "./anaconda2/lib/python2.7/site-packages/powerline/bindings/tmux/powerline.conf"
 
 ###############################
 # MAC AND iTERM COMPATIBILITY

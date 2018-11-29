@@ -1,16 +1,35 @@
 #!/bin/bash
 
-# open specified files in Sublime, e.g., "s ."
-alias s='open -a "Sublime Text"'
+# sublime
+alias s='subl'
+
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+  test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+  alias ls='ls --color=auto'
+  alias dir='dir --color=auto'
+  alias vdir='vdir --color=auto'
+
+  alias grep='grep --color=auto'
+  alias fgrep='fgrep --color=auto'
+  alias egrep='egrep --color=auto'
+fi
+
+# more ls alias
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+alias lsd='ls -alF | grep "^d"'
 
 # git
 alias gb='git branch -a'
 alias gd='git diff'
 alias gl='git log --oneline'
 alias gs='git status --porcelain'
-alias ga='git add .'
+alias ga='git add -A .'
 alias gc='git commit -am'  # add commit msg
 alias gp='git push'
+alias gr='git remote -v'
 alias grm='git rm $(git ls-files --deleted)'
 
 # tmux
@@ -20,6 +39,6 @@ alias t='tmux'
 alias sudo='sudo '
 
 # Colored up cat!
-# You must install Pygments first - "sudo easy_install Pygments", and then
+# You must install Pygments first - "sudo easy_install Pygments"
 # install solarized CSS: "pip install pygments-style-solarized"
-alias c='pygmentize -O style=solarizedlight -f console256 -g'
+alias c='pygmentize -O style=solarizeddark -f console256 -g'

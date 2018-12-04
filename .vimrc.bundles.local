@@ -3,3 +3,4 @@ Plugin 'google/vim-codefmt'
 Plugin 'google/vim-glaive'
 Plugin 'fisadev/vim-isort'
 Plugin 'Powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'valloric/youcompleteme'

@@ -8,7 +8,7 @@ set nocursorline " don't highlight current line
 autocmd! bufwritepost .vimrc source ~/.vimrc
 
 " keyboard shortcuts
-inoremap jj <ESC>
+noremap jj <ESC>
 
 " highlight search
 "set hlsearch
@@ -31,11 +31,14 @@ set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusl
 " gui settings
 if (&t_Co == 256 || has('gui_running'))
   " color scheme
-  if ($TERM_PROGRAM == 'iTerm.app')
-    colorscheme solarized
-  else
-    colorscheme desert
-  endif
+  syntax on
+  let g:solarized_termtrans = 1
+  let g:solarized_termcolors = 16 "256
+  let g:solarized_visibility = 'high'
+  let g:solarized_contrast = 'high'
+  set background=dark
+  colorscheme solarized
+  "colorscheme desert
 endif
 
 " Disambiguate ,a & ,t from the Align plugin, making them fast again.
@@ -54,7 +57,17 @@ endfunction
 command! -nargs=0 RemoveConflictingAlignMaps call s:RemoveConflictingAlignMaps()
 silent! autocmd VimEnter * RemoveConflictingAlignMaps
 
-" jfon: Configure google-vimcodefmt:
+" jfon: Configure YCM.
+let g:ycm_confirm_extra_conf = 0
+"let g:ycm_server_use_vim_stdout = 1
+"let g:ycm_server_keep_logfiles = 1
+let g:ycm_server_log_level = 'debug'
+let g:ycm_max_diagnostics_to_display = 10000
+let g:ycm_enable_diagnostic_signs = 1
+let g:ycm_enable_diagnostic_highlighting = 0
+let g:ycm_always_populate_location_list = 1 "default 0
+
+" jfon: Configure google-vimcodefmt.
 augroup autoformat_settings
   autocmd FileType bzl AutoFormatBuffer buildifier
   autocmd FileType c,cpp,proto,javascript AutoFormatBuffer clang-format

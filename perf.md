@@ -32,8 +32,8 @@ Requires downloading [Brendan Gregg's FlameGraph scripts](github.com/brendangreg
 $ data=path/to/perf.data
 $ fn=somefunctionofinterest
 $ out=/tmp/stack.svg
-$ perf script -i ${data} \
-  | ./stackcollapse-perf.pl \
-  | grep ${fn} \
-  | ./flamegraph.pl > ${out}
+$ perf script -i ${data} |
+./stackcollapse-perf.pl |
+grep ${fn} |
+./flamegraph.pl > ${out}
 ```

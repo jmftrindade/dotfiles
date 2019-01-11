@@ -39,10 +39,12 @@
   trustExitCode = true
   cmd = meld --auto-merge "$PWD/$LOCAL" "$PWD/$BASE" "$PWD/$REMOTE" --output="$PWD/$MERGED"
 
-# cr/lf on projects where collaborators are using a mix of win + *nix systems
 [core]
+  # cr/lf on projects where collaborators are using a mix of win + *nix systems
   autocrlf = false
   safecrlf = true
+  # that default editor sucks
+  editor = "vim"
 
 # don't sign commits
 [commit]

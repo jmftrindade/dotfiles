@@ -2,6 +2,8 @@
 
 [perf holy grail](http://www.brendangregg.com/perf.html)
 
+# Example commands
+
 Commands below assume
 
 ```bash

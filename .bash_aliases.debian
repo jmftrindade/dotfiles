@@ -3,6 +3,9 @@
 # sublime
 alias s='subl'
 
+# open over X11
+alias open=xdg-open
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
   test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -34,6 +37,9 @@ alias grm='git rm $(git ls-files --deleted)'
 
 # tmux
 alias t='tmux'
+
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
 
 # sudo for alias'ed cmds
 alias sudo='sudo '

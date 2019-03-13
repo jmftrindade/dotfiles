@@ -27,10 +27,8 @@ set laststatus=2 " Always display the statusline in all windows
 set showtabline=2 " Always display the tabline, even if there is only one tab
 set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 
-
 " gui settings
 if (&t_Co == 256 || has('gui_running'))
-  " color scheme
   syntax on
   let g:solarized_termtrans = 1
   let g:solarized_termcolors = 16 "256
@@ -82,6 +80,12 @@ augroup autoformat_settings
   autocmd FileType python set tabstop=2
   autocmd FileType python set softtabstop=2
 augroup END
+
+" jfon: https://github.com/rust-lang/rust.vim
+let g:rustfmt_autosave = 1
+" jfon: send clipboard to Rust playpen (vim command is :RustPlay)
+"let g:rust_clip_command = 'pbcopy'  " Mac OS X
+let g:rust_clip_command = 'xclip -selection clipboard'  " Linux
 
 " jfon: Run google-vimcodefmt code formatter and fisadev/vim-isort on all lines of the file buffer.
 ":augroup codeformatter

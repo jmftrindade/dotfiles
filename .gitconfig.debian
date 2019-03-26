@@ -49,14 +49,14 @@
   prompt = false
 [difftool "meld"]
   trustExitCode = true
-  cmd = open -W -a Meld --args \"$LOCAL\" \"$PWD/$REMOTE\"
+  cmd = meld "$LOCAL" "$PWD/$REMOTE"
 [merge]
   tool = meld
 [mergetool]
   prompt = false
 [mergetool "meld"]
   trustExitCode = true
-  cmd = open -W -a Meld --args --auto-merge \"$PWD/$LOCAL\" \"$PWD/$BASE\" \"$PWD/$REMOTE\" --output=\"$PWD/$MERGED\"
+  cmd = meld --auto-merge "$PWD/$LOCAL" "$PWD/$BASE" "$PWD/$REMOTE" --output="$PWD/$MERGED"
 
 # cr/lf on projects where collabs are using a mix of win + *nix systems
 [core]

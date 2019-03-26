@@ -1,9 +1,9 @@
 #!/bin/bash
 
 alias f='fish'
-alias s='subl'
-alias open='xdg-open'
+alias s='open -a "Sublime Text"'
 alias o='open'
+alias vim='mvim -v'
 alias v='vim'
 
 alias grep='grep --color=auto'
@@ -14,12 +14,11 @@ alias egrep='egrep --color=auto'
 #alias ls='ls --color=auto'
 alias ls='exa -F --group-directories-first --color=auto'
 
-# more ls alias
 #alias l='ls -CF'
 #alias la='ls -A'
 #alias ll='ls -alF'
 #alias lsd='ls -alF | grep "^d"'
-
+alias l='ls'
 alias la='ls -a'
 alias ll='ls -lagh --time-style=long-iso'
 alias lg='ll --git'
@@ -31,9 +30,6 @@ alias grm='git rm $(git ls-files --deleted)'
 
 # tmux
 alias t='tmux'
-
-alias pbcopy='xclip -selection clipboard'
-alias pbpaste='xclip -selection clipboard -o'
 
 # sudo for alias'ed cmds
 alias sudo='sudo '

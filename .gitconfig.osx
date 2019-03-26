@@ -1,9 +1,5 @@
-#[filter "lfs"]
-#  clean = git-lfs clean %f
-#  smudge = git-lfs smudge %f
-#  required = true
 [user]
-  name = Joana Trindade
+  name = Joana M. F. da Trindade
   email = jmftrindade@gmail.com
 
 # colors for colored commands
@@ -23,8 +19,30 @@
   changed = green
   untracked = cyan
 
+[alias]
+  a = add -A .
+  b = branch -a
+  c = commit
+  cm = commit -am .
+  d = diff
+  dt = difftool
+  l = log --oneline
+  last = log -1 HEAD
+  p = push
+  r = remote -v
+  s = status --porcelain
+
+[help]
+  autocorrect = 1
+[url "git@github.com:"]
+  insteadOf = g:
+[url "git@github.mit.edu:"]
+  insteadOf = gm:
+
 # meld as difftool
 [diff]
+  algorithm = patience
+  compactionHeuristic = true
   tool = meld
 [difftool]
   prompt = false
@@ -39,12 +57,10 @@
   trustExitCode = true
   cmd = open -W -a Meld --args --auto-merge \"$PWD/$LOCAL\" \"$PWD/$BASE\" \"$PWD/$REMOTE\" --output=\"$PWD/$MERGED\"
 
+# cr/lf on projects where collabs are using a mix of win + *nix systems
 [core]
-  # cr/lf on projects where collaborators are using a mix of win + *nix systems
   autocrlf = false
   safecrlf = true
-  # that default editor sucks
-  editor = "vim"
 
 # don't sign commits
 [commit]

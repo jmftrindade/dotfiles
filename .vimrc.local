@@ -1,14 +1,13 @@
-" jfon: a few more settings not shipped with maximum-awesome
-set textwidth=80  " line break after 80 chars
-set nocursorline " don't highlight current line
+set textwidth=80   " line break after 80 chars
+set nocursorline   " don't highlight current line
 
 "set autowrite
 "set nowritebackup
-"set whichwrap+=<,>,h,l,[,] " Wrap arrow keys between lines
+"set whichwrap+=<,>,h,l,[,]  " Wrap arrow keys between lines
 autocmd! bufwritepost .vimrc source ~/.vimrc
 
 " keyboard shortcuts
-noremap jj <ESC>
+inoremap jj <ESC>
 
 " highlight search
 "set hlsearch

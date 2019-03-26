@@ -23,7 +23,8 @@
   a = add -A .
   b = branch -a
   c = commit
-  cm = commit -am .
+  cam = commit -am
+  ccc = commit -am '.'
   d = diff
   dt = difftool
   l = log --oneline

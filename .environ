@@ -1,0 +1,35 @@
+umask 022
+
+test "$UID"      || UID=$(id -u)
+test "$USER"     || USER=$(id -un)
+test "$HOSTNAME" || HOSTNAME=$(hostname)
+
+set -a
+
+PREFIX="$HOME/.local"
+
+PATH="$HOME/bin:$PREFIX/bin:$PATH"
+
+# Rust.
+PATH="$HOME/.cargo/bin:$PATH"
+source $HOME/.cargo/env
+
+# id & locale
+EMAIL="jmftrindade@gmail.com"
+NAME="Joana Trindade"
+TZ="America/New_York"
+
+# programs
+BROWSER="chromium-browser"
+EDITOR="vim"
+PAGER="less"
+unset VISUAL
+
+# defaults
+LESS="e M q R F X z -3"
+LESS_TERMCAP_us='[3m'     # change underline to italic
+LESS_TERMCAP_ue='[23m'    # un-italic
+
+if [ -f ~/.environ.$HOSTNAME ]; then
+  source ~/.environ.$HOSTNAME
+fi

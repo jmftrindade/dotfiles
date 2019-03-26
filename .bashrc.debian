@@ -52,6 +52,11 @@ if ! shopt -oq posix; then
 fi
 #------------------------------------------------------------------------------
 
+# envvars may be cleaned if e.g., sudo -s, and in that case reload.
+if [[ ! $PREFIX ]]; then
+  source ~/.environ
+fi
+
 source ~/.bash_aliases
 
 if [ -f .bashrc.$HOSTNAME ]; then
@@ -61,10 +66,6 @@ fi
 if [ -f "$(command -v dircolors)"  ]; then
    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
 fi
-
-# Rust.
-export PATH="$HOME/.cargo/bin:$PATH"
-source $HOME/.cargo/env
 
 ### Prompt Colors
 # Modified version of @gf3’s Sexy Bash Prompt

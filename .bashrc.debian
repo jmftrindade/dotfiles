@@ -57,10 +57,14 @@ if [[ ! $PREFIX ]]; then
   source ~/.environ
 fi
 
-source ~/.bash_aliases
+. $HOME/.bash_aliases
 
-if [ -f .bashrc.$HOSTNAME ]; then
-  source .bashrc.$HOSTNAME
+if [ -f "$HOME/.bash_aliases.$HOSTNAME" ]; then
+  . $HOME/.bash_aliases.$HOSTNAME
+fi
+
+if [ -f "$HOME/.bashrc.$HOSTNAME" ]; then
+  . $HOME/.bashrc.$HOSTNAME
 fi
 
 if [ -f "$(command -v dircolors)"  ]; then

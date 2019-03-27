@@ -12,7 +12,7 @@ PATH="$HOME/bin:$PREFIX/bin:$PATH"
 
 # Rust.
 PATH="$HOME/.cargo/bin:$PATH"
-source $HOME/.cargo/env
+. "$HOME/.cargo/env"
 
 # id & locale
 EMAIL="jmftrindade@gmail.com"
@@ -37,6 +37,6 @@ LESS_TERMCAP_so=$'\e[38;5;246m'    # begin standout-mode - info box
 LESS_TERMCAP_ue=$'\e[0m'           # end underline
 LESS_TERMCAP_us=$'\e[04;38;5;146m' # begin underline
 
-if [ -f ~/.environ.$HOSTNAME ]; then
-  source ~/.environ.$HOSTNAME
+if [ -f "$HOME/.environ.$HOSTNAME" ]; then
+  . "$HOME/.environ.$HOSTNAME"
 fi

@@ -40,3 +40,5 @@ LESS_TERMCAP_us=$'\e[04;38;5;146m' # begin underline
 if [ -f "$HOME/.environ.$HOSTNAME" ]; then
   . $HOME/.environ.$HOSTNAME
 fi
+
+set +a

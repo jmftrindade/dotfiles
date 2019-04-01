@@ -12,7 +12,9 @@ PATH="/usr/local/opt/llvm/bin:$PATH"
 # $ brew install coreutils
 # $ brew install diffutils
 # $ brew install grep
+# $ brew install gnu-sed
 PATH="/usr/local/opt/binutils/bin:$PATH"
 PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 PATH="/usr/local/opt/diffutils/libexec/gnubin:$PATH"
 PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
+PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"

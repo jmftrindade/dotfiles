@@ -1,0 +1,21 @@
+# https://medium.com/@briantorresgil/definitive-guide-to-python-on-mac-osx-65acd8d969d0
+# activate virtualenvwrapper
+source /usr/local/bin/virtualenvwrapper.sh
+# pip should only run if there is a virtualenv currently activated
+export PIP_REQUIRE_VIRTUALENV=true
+# create commands to override pip restriction.
+# use `gpip` or `gpip3` to force installation of
+# a package in the global python environment
+gpip(){
+   PIP_REQUIRE_VIRTUALENV="" pip "$@"
+}
+gpip3(){
+   PIP_REQUIRE_VIRTUALENV="" pip3 "$@"
+}
+
+# https://git-scm.com/book/en/v1/Git-Basics-Tips-and-Tricks
+source ~/git-completion.bash
+
+# https://streambench.wordpress.com/2017/10/26/setting-up-apache-flink-on-mac-os-x/
+alias start-flink='/usr/local/Cellar/apache-flink/1.3.2/libexec/bin/start-local.sh'
+alias stop-flink='/usr/local/Cellar/apache-flink/1.3.2/libexec/bin/stop-local.sh'

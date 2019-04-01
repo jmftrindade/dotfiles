@@ -72,8 +72,9 @@ if [ -f "$(command -v dircolors)"  ]; then
 fi
 
 ### Prompt Colors
-# Modified version of @gf3’s Sexy Bash Prompt
-# (https://github.com/gf3/dotfiles)
+# From:
+# https://github.com/barryclark/bashstrap
+# https://github.com/gf3/dotfiles
 if [[ $COLORTERM = gnome-* && $TERM = xterm ]] && infocmp gnome-256color >/dev/null 2>&1; then
   export TERM=gnome-256color
 elif infocmp xterm-256color >/dev/null 2>&1; then

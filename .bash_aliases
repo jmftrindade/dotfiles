@@ -1,27 +1,22 @@
 #!/bin/bash
 
 alias f='fish'
-alias s='subl'
-alias open='xdg-open'
 alias o='open'
 alias v='vim'
+
+alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
+alias localip='ipconfig getifaddr en0'
+alias netinfo='nslookup `ip`'
 
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
 # exa > ls
-#alias ls='ls --color=auto'
 alias ls='exa -F --group-directories-first --color=auto'
-
-# more ls alias
-#alias l='ls -CF'
-#alias la='ls -A'
-#alias ll='ls -alF'
-#alias lsd='ls -alF | grep "^d"'
-
+alias l='ls'
 alias la='ls -a'
-alias ll='ls -lagh --time-style=long-iso'
+alias ll='ls -lag --time-style=long-iso'
 alias lg='ll --git'
 alias lt='ls -T'
 
@@ -31,9 +26,6 @@ alias grm='git rm $(git ls-files --deleted)'
 
 # tmux
 alias t='tmux'
-
-alias pbcopy='xclip -selection clipboard'
-alias pbpaste='xclip -selection clipboard -o'
 
 # sudo for alias'ed cmds
 alias sudo='sudo '

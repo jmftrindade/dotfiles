@@ -1,0 +1,5 @@
+#!/bin/bash
+
+alias open='xdg-open'
+alias s='subl'
+alias v='vim'

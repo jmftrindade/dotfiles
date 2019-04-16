@@ -59,6 +59,13 @@ fi
 
 . $HOME/.bash_aliases
 
+# Bash-specific aliases (fish equivalent on ~/.config/fish/config.fish):
+# e.g., ff "*.h" or ff "*.java"
+alias ff='function __ff() { find . -name "$1" -type f 2>/dev/null; unset -f __ff; }; __ff'
+# e.g., ffg "*.txt" "error"
+alias ffg='function __ffg() { find . -name "$1" -type f 2>/dev/null | xargs grep "$2"; unset -f __ffg; }; __ffg'
+
+
 if [ -f "$HOME/.bash_aliases.$HOSTNAME" ]; then
   . $HOME/.bash_aliases.$HOSTNAME
 fi

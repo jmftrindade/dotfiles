@@ -1,13 +1,16 @@
 #!/bin/bash
 
+# apps
 alias f='fish'
 alias o='open'
 alias v='vim'
 
+# net
 alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias localip='ipconfig getifaddr en0'
 alias netinfo='nslookup `ip`'
 
+# grep
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
@@ -22,7 +25,7 @@ alias lt='ls -T'
 
 # git
 alias g='git'
-alias grm='git rm $(git ls-files --deleted)'
+#alias grm='git rm $(git ls-files --deleted)'
 
 # tmux
 alias t='tmux'

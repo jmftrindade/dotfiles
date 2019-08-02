@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # apps
+alias d='docker'
 alias f='fish'
 alias o='open'
 alias v='vim'

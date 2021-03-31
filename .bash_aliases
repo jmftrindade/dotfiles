@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# interactive mode by default
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'
+
 # apps
 alias d='docker'
 alias f='fish'

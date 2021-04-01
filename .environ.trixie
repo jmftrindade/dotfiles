@@ -1,0 +1,2 @@
+# Tapir clang
+export PATH="$HOME/opencilk-v1.0-rc2-project/build/bin:$PATH"

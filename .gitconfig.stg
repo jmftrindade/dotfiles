@@ -1,0 +1,76 @@
+[user]
+  name = Joana M. F. da Trindade
+  email = jmftrindade@gmail.com
+
+# colors for colored commands
+[color]
+  ui = auto
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+
+[alias]
+  a = add -A .
+  b = branch -a
+  c = commit
+  cam = commit -am
+  ccc = commit -am '.'
+  d = diff
+  dt = difftool
+  l = log --oneline
+  last = log -1 HEAD
+  p = push
+  r = remote -v
+  s = status --porcelain
+
+[help]
+  autocorrect = 1
+[url "git@github.com:"]
+  insteadOf = g:
+[url "git@github.mit.edu:"]
+  insteadOf = gm:
+
+# meld as difftool
+[diff]
+  algorithm = patience
+  compactionHeuristic = true
+  tool = meld
+[difftool]
+  prompt = false
+[difftool "meld"]
+  trustExitCode = true
+  cmd = meld "$LOCAL" "$PWD/$REMOTE"
+[merge]
+  tool = meld
+[mergetool]
+  prompt = false
+[mergetool "meld"]
+  trustExitCode = true
+  cmd = meld --auto-merge "$PWD/$LOCAL" "$PWD/$BASE" "$PWD/$REMOTE" --output="$PWD/$MERGED"
+
+# cr/lf on projects where collabs are using a mix of win + *nix systems
+[core]
+  autocrlf = false
+  safecrlf = true
+
+# don't sign commits
+[commit]
+  gpgsign = false
+
+# push all branches that have matching names in remote
+[push]
+  default = matching
+[http]
+	proxy = http://proxy.jf.intel.com:911
+[https]
+	proxy = http://proxy.jf.intel.com:912

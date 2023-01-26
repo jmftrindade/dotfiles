@@ -29,3 +29,6 @@ Plugin 'mattn/webapi-vim'
 " vim + tmux panes
 Plugin 'christoomey/vim-tmux-navigator'
 "Plugin 'melonmanchan/vim-tmux-resizer'
+
+" https://stackoverflow.com/questions/10694516/vim-copy-mac-over-ssh
+Plugin 'ojroques/vim-oscyank'

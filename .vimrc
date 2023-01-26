@@ -179,3 +179,7 @@ let g:rust_clip_command = 'xclip -selection clipboard'  " Linux
 
 " Ctrl-i to sort Python imports (from fisadev/vim-isort Vundle plugin).
 "let g:vim_isort_map = '<C-i>'
+
+" https://stackoverflow.com/questions/10694516/vim-copy-mac-over-ssh
+" Plugin is 'ojroques/vim-oscyank' (see .vimrc.bundles)
+autocmd TextYankPost * if v:event.operator is 'y' && v:event.regname is '' | OSCYankReg " | endif

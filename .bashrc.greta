@@ -1,0 +1,10 @@
+# TapirClang
+#LLVM_BUILD=$HOME/src/github.com/Tapir-Meta/tapir/build
+#export PATH=$LLVM_BUILD/bin:$PATH
+
+# Root dir for Python virtualenv environments
+export VENV=$HOME/src/venv
+
+# We use /bin/bash instead of /bin/zsh:
+source .zprofile
+export BASH_SILENCE_DEPRECATION_WARNING=1

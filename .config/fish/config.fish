@@ -1,8 +1,8 @@
 set fish_greeting
 
-if functions -q bash_aliases
-  bash_aliases
-end
+source ~/.bash_aliases
+set -gx HOSTNAME (hostname)
+[ -e ~/.bash_aliases.$HOSTNAME ]; and source ~/.bash_aliases.$HOSTNAME
 
 # Fish-specific aliases (see ~/.bashrc for bash equivalent).
 # e.g., ff "*.java"

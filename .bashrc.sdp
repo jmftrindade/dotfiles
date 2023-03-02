@@ -1,0 +1,3 @@
+# Root dir for Python virtualenv environments
+export VENV=$HOME/src/venv
+

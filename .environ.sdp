@@ -1,0 +1,9 @@
+# Tapir clang
+export PATH="$HOME/opencilk/build/bin:$PATH"
+
+# cilkrts
+export LD_LIBRARY_PATH="$HOME/tgdb/build/third_party/cilkrtslocal/src/cilkrts-project:/usr/lib:/usr/local/lib:${LD_LIBRARY_PATH}"
+
+# vtune
+source $HOME/intel/oneapi/setvars.sh
+export VTUNE_HOME=$HOME/intel/oneapi/vtune/latest

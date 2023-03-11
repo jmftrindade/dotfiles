@@ -9,3 +9,6 @@ PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
 PATH="/opt/homebrew/opt/diffutils/libexec/gnubin:$PATH"
 PATH="/opt/homebrew/opt/grep/libexec/gnubin:$PATH"
 PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
+
+# Ruby
+PATH="/opt/homebrew/opt/ruby/bin:$PATH"

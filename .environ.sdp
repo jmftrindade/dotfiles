@@ -1,8 +1,17 @@
-# Tapir clang
-export PATH="$HOME/opencilk/build/bin:$PATH"
+export LD_LIBRARY_PATH="/usr/lib/x86_64-linux-gnu:/usr/lib:/usr/local/lib:${LD_LIBRARY_PATH}"
 
-# cilkrts
-export LD_LIBRARY_PATH="$HOME/tgdb/build/third_party/cilkrtslocal/src/cilkrts-project:/usr/lib:/usr/local/lib:${LD_LIBRARY_PATH}"
+# We need clang++ from Opencilk because vanilla clang++ is not compiled with
+# cilk support. Current installation process, as of March 2023:
+# https://www.opencilk.org/doc/users-guide/install/#installing-using-a-shell-archive
+export OPENCILK_HOME="/opt/opencilk"
+export PATH="${OPENCILK_HOME}/bin:$PATH"
+export CLANG_VERSION="14.0.6"
+export CLANG_TARGET="x86_64-unknown-linux-gnu"
+export LD_LIBRARY_PATH="${OPENCILK_HOME}/lib/clang/${CLANG_VERSION}/lib/${CLANG_TARGET}:${OPENCILK_HOME}/lib:${LD_LIBRARY_PATH}"
+
+# cilkrts (Opencilk doesn't have all Cilk Plus functions)
+export CILKPLUS_HOME="$HOME/tgdb_bkp/build/third_party/cilkrtslocal/src/cilkrts-project"
+export LD_LIBRARY_PATH="${CILKPLUS_HOME}:${LD_LIBRARY_PATH}"
 
 # vtune
 source $HOME/intel/oneapi/setvars.sh

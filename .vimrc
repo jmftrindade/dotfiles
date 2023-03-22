@@ -56,7 +56,12 @@ set wildmode=longest,list,full
 " Enable basic mouse behavior such as resizing buffers.
 set mouse=a
 if exists('$TMUX')  " Support resizing in tmux
-  set ttymouse=xterm2
+  " https://neovim.io/doc/user/nvim.html#nvim-from-vim
+  if has('nvim')
+    tnoremap <Esc> <C-\><C-n>
+  else
+    set ttymouse=xterm2
+  endif
 endif
 
 " keyboard shortcuts
@@ -114,18 +119,23 @@ endif
 " Don't copy the contents of an overwritten selection.
 vnoremap p "_dP
 
-" https://github.com/powerline/powerline
-set guifont=Monaco\ for\ Powerline:h12
-let g:Powerline_symbols = 'fancy'
-set encoding=utf-8
-set t_Co=256
-set fillchars+=stl:\ ,stlnc:\
-set term=xterm-256color
-set termencoding=utf-8
-" for compatibility with powerline:
-set laststatus=2  " Always display the statusline in all windows
-set showtabline=2 " Always display the tabline, even if there is only one tab
-set noshowmode    " Hide the default mode text (e.g. -- INSERT -- below the statusline)
+" Powerline only when not in neovim mode.
+if !has('nvim')
+  " https://github.com/powerline/powerline
+  set guifont=Monaco\ for\ Powerline:h12
+  let g:Powerline_symbols = 'fancy'
+  set encoding=utf-8
+  set t_Co=256
+  set fillchars+=stl:\ ,stlnc:\
+  set term=xterm-256color
+  set termencoding=utf-8
+  " for compatibility with powerline:
+  set laststatus=2  " Always display the statusline in all windows
+  set showtabline=2 " Always display the tabline, even if there is only one tab
+  set noshowmode    " Hide the default mode text (e.g. -- INSERT -- below the statusline)
+else
+  let g:powerline_loaded = 1
+endif
 
 " gui settings
 if (&t_Co == 256 || has('gui_running'))
@@ -139,15 +149,20 @@ if (&t_Co == 256 || has('gui_running'))
   "colorscheme desert
 endif
 
-" https://github.com/Valloric/YouCompleteMe
-let g:ycm_confirm_extra_conf = 0
-"let g:ycm_server_use_vim_stdout = 1
-"let g:ycm_server_keep_logfiles = 1
-let g:ycm_server_log_level = 'debug'
-let g:ycm_max_diagnostics_to_display = 10000
-let g:ycm_enable_diagnostic_signs = 1
-let g:ycm_enable_diagnostic_highlighting = 0
-let g:ycm_always_populate_location_list = 1 "default 0
+" YouCompleteMe only when not in neovim mode.
+if !has('nvim')
+  " https://github.com/Valloric/YouCompleteMe
+  let g:ycm_confirm_extra_conf = 0
+  "let g:ycm_server_use_vim_stdout = 1
+  "let g:ycm_server_keep_logfiles = 1
+  let g:ycm_server_log_level = 'debug'
+  let g:ycm_max_diagnostics_to_display = 10000
+  let g:ycm_enable_diagnostic_signs = 1
+  let g:ycm_enable_diagnostic_highlighting = 0
+  let g:ycm_always_populate_location_list = 1 "default 0
+else
+  let g:loaded_youcompleteme = 1
+endif
 
 " https://github.com/google/vim-codefmt
 augroup autoformat_settings

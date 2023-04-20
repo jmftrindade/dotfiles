@@ -59,6 +59,8 @@ if exists('$TMUX')  " Support resizing in tmux
   " https://neovim.io/doc/user/nvim.html#nvim-from-vim
   if has('nvim')
     tnoremap <Esc> <C-\><C-n>
+  elseif has("mouse_sgr")
+    set ttymouse=sgr
   else
     set ttymouse=xterm2
   endif

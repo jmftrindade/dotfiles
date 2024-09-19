@@ -1,0 +1,3 @@
+alias meld='open -W -a Meld --args'
+alias s='open -a "Sublime Text"'
+alias vim='nvim'

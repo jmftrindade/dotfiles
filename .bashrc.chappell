@@ -1,0 +1,18 @@
+# From brew install zlib
+export LDFLAGS="-L/opt/homebrew/opt/zlib/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/zlib/include"
+
+# ==============================================================
+# neovim (not compatible with $PREFIX, which is set on .environ)
+OLD_PREFIX=$PREFIX
+unset PREFIX
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+PREFIX=$OLD_PREFIX
+# ==============================================================
+
+# Have a default virtualenv for use with tmux (needed for powerline)
+source $HOME/venv/default/bin/activate

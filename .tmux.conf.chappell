@@ -77,7 +77,7 @@ bind-key = select-layout main-vertical
 set-window-option -g other-pane-height 25
 set-window-option -g other-pane-width 80
 
-#bind-key \ select-pane -L
+#bind-key \ select-pane -l
 bind-key q display-panes
 bind-key c new-window
 bind-key t next-window
@@ -87,18 +87,10 @@ bind-key [ copy-mode
 bind-key ] paste-buffer
 
 # Setup 'v' to begin selection as in Vim
-# v2.1:
-#bind-key -t vi-copy v begin-selection
-#bind-key -t vi-copy y copy-pipe "reattach-to-user-namespace pbcopy"
-# v2.6:
 bind-key -T copy-mode-vi v send -X begin-selection
 bind-key -T copy-mode-vi y send -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy"
 
 # Update default binding of `Enter` to also use copy-pipe
-# v2.1:#
-#unbind-key -t vi-copy Enter
-#bind-key   -t vi-copy Enter copy-pipe "reattach-to-user-namespace pbcopy"
-# v2.6:
 unbind-key -T copy-mode-vi Enter
 bind-key   -T copy-mode-vi Enter send -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy"
 
@@ -119,8 +111,6 @@ set -g default-terminal "screen-256color"
 set-window-option -g display-panes-time 1500
 
 # Set pane colors - highlight the active pane
-#set -g status-bg black
-#set -g status-fg yellow
 set -g pane-border-style fg=colour3
 set -g pane-active-border-style bg=colour3,fg=colour3
 
@@ -146,26 +136,14 @@ set -g visual-activity on
 
 # Powerline status bar (update path appropriately)
 # Depends on powerline install (pip install powerline-status)
-#run-shell "powerline-daemon -q"
-# Mac OS X with conda python:
-#source "/anaconda/lib/python3.5/site-packages/powerline/bindings/tmux/powerline.conf"
-# Mac OS X with proper python:
-#source "/usr/local/lib/python2.7/site-packages/powerline/bindings/tmux/powerline.conf"
-# Ubuntu boxes (pip --user install powerline-status):
-#source "./anaconda2/lib/python2.7/site-packages/powerline/bindings/tmux/powerline.conf"
-#source "$HOME/.local/lib/python3.6/site-packages/powerline/bindings/tmux/powerline.conf"
-# Fedora box (root):
-#source /usr/lib/python2.7/site-packages/powerline/bindings/tmux/powerline.conf
-# Intel Ubuntu box (root):
-#source /usr/local/lib/python3.6/dist-packages/powerline/bindings/tmux/powerline.conf
+run-shell "powerline-daemon -q"
+source $VIRTUAL_ENV/lib/python3.12/site-packages/powerline/bindings/tmux/powerline.conf
 
 ###############################
 # MAC AND iTERM COMPATIBILITY
 ###############################
 
 # Enable native Mac OS X copy/paste
-#set-option -g default-command "/bin/bash -c 'which reattach-to-user-namespace >/dev/null && exec reattach-to-user-namespace $SHELL -l || exec $SHELL -l'"
-#set-option -g default-command "/bin/bash -c 'which reattach-to-user-namespace >/dev/null && exec reattach-to-user-namespace /usr/local/bin/fish -l || exec /usr/local/bin/fish -l'"
 set-option -g default-command "/opt/homebrew/bin/bash -c 'which reattach-to-user-namespace >/dev/null && exec reattach-to-user-namespace /opt/homebrew/bin/fish -l || exec /opt/homebrew/bin/fish -l'"
 
 # Fix to allow mousewheel/trackpad scrolling in tmux 2.1

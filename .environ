@@ -14,13 +14,13 @@ PATH="$HOME/bin:$PREFIX/bin:$PATH"
 . $HOME/.cargo/env
 
 # id & locale
-EMAIL="jmftrindade@gmail.com"
+EMAIL="joana.trindade@databricks.com"
 NAME="Joana Trindade"
-TZ="America/New_York"
+TZ="Europe/Berlin"
 
 # programs
 BROWSER="chromium-browser"
-EDITOR="vim"
+EDITOR="nvim"
 PAGER="less"
 unset VISUAL
 

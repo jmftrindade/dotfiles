@@ -1,0 +1,21 @@
+# Homebrew takes priority.
+PATH="/opt/homebrew/bin:$PATH"
+
+# GNU utils:
+# $ brew install binutils
+# $ brew install coreutils
+# $ brew install diffutils
+# $ brew install grep
+# $ brew install gnu-sed
+PATH="/opt/homebrew/opt/binutils/bin:$PATH"
+PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
+PATH="/opt/homebrew/opt/diffutils/libexec/gnubin:$PATH"
+PATH="/opt/homebrew/opt/grep/libexec/gnubin:$PATH"
+PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
+
+# Python
+PATH="/opt/homebrew/opt/python/libexec/bin:$PATH"
+PATH="/opt/homebrew/opt/python3/libexec/bin:$PATH"
+
+# Ruby
+PATH="/opt/homebrew/opt/ruby/bin:$PATH"

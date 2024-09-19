@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# We use /bin/bash instead of /bin/zsh, but can still load .zprofile if it exists:
+if [ -f .zprofile ]; then
+  source .zprofile
+  export BASH_SILENCE_DEPRECATION_WARNING=1
+fi
+
 #------------------------------------------------------------------------------
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)

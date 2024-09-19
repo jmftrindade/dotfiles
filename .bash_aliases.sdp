@@ -1,7 +1,0 @@
-#!/bin/bash
-
-alias open='xdg-open'
-alias pbcopy='xsel --clipboard --input'
-alias pbpaste='xsel --clipboard --output'
-alias s='subl'
-alias nv='nvim'

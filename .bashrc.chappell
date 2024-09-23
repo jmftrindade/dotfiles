@@ -14,5 +14,9 @@ export NVM_DIR="$HOME/.nvm"
 PREFIX=$OLD_PREFIX
 # ==============================================================
 
+# brew install fzf  # OSX
+# https://github.com/junegunn/fzf/releases  # nix
+eval "$(fzf --bash)"
+
 # Have a default virtualenv for use with tmux (needed for powerline)
 source $HOME/venv/default/bin/activate

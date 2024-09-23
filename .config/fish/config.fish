@@ -18,3 +18,7 @@ function ffg
     find . -name "$argv[1]" -type f 2>/dev/null | xargs grep "$argv[2]";
   end
 end
+
+# brew install fzf  # OSX
+# https://github.com/junegunn/fzf/releases tarball  # Linux
+fzf --fish | source
